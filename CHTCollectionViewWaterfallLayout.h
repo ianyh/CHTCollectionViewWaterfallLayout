@@ -24,6 +24,7 @@ typedef NS_ENUM (NSUInteger, CHTCollectionViewWaterfallLayoutItemRenderDirection
 extern NSString *const CHTCollectionElementKindSectionHeader;
 /// A supplementary view that identifies the footer for a given section.
 extern NSString *const CHTCollectionElementKindSectionFooter;
+extern NSString *const CHTCollectionElementKindCellHeader;
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 
