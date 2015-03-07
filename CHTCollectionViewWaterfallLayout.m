@@ -448,7 +448,10 @@ const NSInteger unionSize = 20;
                 headerAttributes.hidden = NO;
                 
                 CGPoint origin = headerAttributes.frame.origin;
-                origin.y = MIN(MAX(cellAttributes.frame.origin.y - headerAttributes.frame.size.height, self.collectionView.contentInset.top + self.collectionView.contentOffset.y), CGRectGetMaxY(cellAttributes.frame) - headerAttributes.frame.size.height);
+                CGFloat minY = cellAttributes.frame.origin.y - headerAttributes.frame.size.height;
+                CGFloat maxY = CGRectGetMaxY(cellAttributes.frame) - headerAttributes.frame.size.height;
+                
+                origin.y = MIN(MAX(minY, self.collectionView.contentInset.top + self.collectionView.contentOffset.y), maxY);
                 headerAttributes.frame = (CGRect){
                     origin,
                     headerAttributes.frame.size
